@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Class Attendance Dashboard</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Arial', sans-serif;
+      background-color: #f4f4f4;
+    }
+
+    .dashboard-container {
+      display: grid;
+      grid-template-columns: 200px 1fr;
+      min-height: 100vh;
+    }
+
+    .sidebar {
+      background-color: rgb(8, 58, 6);
+      padding: 20px;
+    }
+
+    .sidebar ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .sidebar a {
+      text-decoration: none;
+      color: #ffffff;
+      display: flex;
+      align-items: center;
+      margin-bottom: 10px;
+      padding: 10px;
+    }
+
+    .sidebar i {
+      margin-right: 10px;
+    }
+
+    .main {
+      position: relative;
+      padding: 20px;
+      width: 100%;
+      margin-top: 20px;
+    }
+
+    .main-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+
+    .main-top h1 {
+      font-size: 24px;
+      color: #333;
+    }
+
+    .main .users {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+
+    .users .card {
+      width: 45%;
+      margin-bottom: 20px;
+      background: #fff;
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0 20px 35px rgba(0, 0, 0, 0.1);
+    }
+
+    .users .card img {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      margin-bottom: 15px;
+    }
+
+    .users .card h4 {
+      margin-bottom: 10px;
+      font-size: 18px;
+      color: #333;
+    }
+
+    .users .card p {
+      margin-bottom: 15px;
+      font-size: 14px;
+      color: #666;
+    }
+
+    .users table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 15px;
+    }
+
+    .users th,
+    .users td {
+      padding: 10px;
+      border-bottom: 1px solid #ddd;
+      text-align: center;
+    }
+
+    .users th {
+      background-color: #f2f2f2;
+      color: #333;
+      font-weight: bold;
+    }
+
+    .users td {
+      color: #666;
+    }
+
+    .users .per span {
+      display: inline-block;
+      padding: 5px 10px;
+      border-radius: 5px;
+      background-color: #ddd;
+      margin-right: 5px;
+    }
+
+    .users .card button {
+      padding: 10px 20px;
+      border: none;
+      background-color: #944ad4;
+      color: #fff;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .users .card button:hover {
+      background-color: #7d349a;
+    }
+  </style>
+  <!-- Masukkan link eksternal seperti font-awesome di sini -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+
+<div class="dashboard-container">
+  <!-- Sidebar -->
+  <div class="sidebar">
+    <ul>
+      <li><a href="#" class="logo">
+        <i class="fas fa-chalkboard-teacher"></i>
+        <span class="nav-item">Teacher</span>
+      </a></li>
+      <li><a href="#">
+        <i class="fas fa-home"></i>
+        <span class="nav-item">Home</span>
+      </a></li>
+      <li><a href="#">
+        <i class="fas fa-chart-pie"></i>
+        <span class="nav-item">Class Statistics</span>
+      </a></li>
+      <li><a href="#">
+        <i class="fas fa-list-alt"></i>
+        <span class="nav-item">Attendance</span>
+      </a></li>
+      <li><a href="#">
+        <i class="fas fa-cogs"></i>
+        <span class="nav-item">Setting</span>
+      </a></li>
+      <li><a href="#" class="logout">
+        <i class="fas fa-sign-out-alt"></i>
+        <span class="nav-item">Exit</span>
+      </a></li>
+    </ul>
+  </div>
+
+  <!-- Main Content -->
+  <section class="main">
+    <div class="main-top">
+      <h1>Class Attendance</h1>
+      <i class="fas fa-user-cog"></i>
+    </div>
+    <div class="users">
+      <div class="card">
+        <img src="manda.jpeg" alt="Avatar">
+        <h4>Lumatau Rivanda Elva</h4>
+        <p>Web Design</p>
+        <div class="per">
+          <span>Present: 20</span>
+          <span>Absent: 3</span>
+          <span>Late: 5</span>
+        </div>
+        <table>
+          <tr>
+            <th>Date</th>
+            <th>Status</th>
+          </tr>
+          <tr>
+            <td>2024-03-01</td>
+            <td>Present</td>
+          </tr>
+          <tr>
+            <td>2024-03-02</td>
+            <td>Late</td>
+          </tr>
+          <tr>
+            <td>2024-03-03</td>
+            <td>Absent</td>
+          </tr>
+        </table>
+        <button>Email</button>
+      </div>
+      <div class="card">
+        <img src="shafara.jpeg" alt="Avatar">
+        <h4>Subaidi Brainy Shafara</h4>
+        <p>Web Design</p>
+        <div class="per">
+          <span>Present: 18</span>
+          <span>Absent: 5</span>
+          <span>Late: 3</span>
+        </div>
+        <table>
+            <tr>
+              <th>Date</th>
+              <th>Status</th>
+            </tr>
+            <tr>
+              <td>2024-03-01</td>
+              <td>Present</td>
+            </tr>
+            <tr>
+              <td>2024-03-02</td>
+              <td>Late</td>
+            </tr>
+            <tr>
+              <td>2024-03-03</td>
+              <td>Absent</td>
+            </tr>
+          </table>
+          <button>Email</button>
+            <
